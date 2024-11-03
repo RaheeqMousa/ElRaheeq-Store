@@ -7,6 +7,10 @@ main{
     top: 100px;
 }
 
+.introduction h1{
+    font-size: 26px;
+}
+
 .introduction .container{
     display: flex;
     flex-direction: column;
@@ -103,13 +107,11 @@ main{
 
 .contact_us .contact_info i{
     font-size: 50px;
-    width:300px;
     text-align: center;
 }
 
 .contact_us .contact_info span{
-    width:300px;
-    font-size: 24px;
+    font-size: 20px;
     text-align: center;
     word-wrap: break-word;
 }
@@ -190,12 +192,10 @@ main{
 
 .features .feature i{
     font-size: 50px;
-    width:300px;
     text-align: center;
 }
 
 .features .feature span{
-    width:300px;
     font-size: 24px;
     text-align: center;
 }

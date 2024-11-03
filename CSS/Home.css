@@ -1,0 +1,81 @@
+@import url('../CSS/main.css');
+
+.header{
+    background-image: url('../images/Home/home\ background.webp');
+    background-size: cover;
+}
+/****************************************************************/
+.projects img{
+    width:300px;
+    height:300px;
+    cursor: pointer;
+    transition: width 0.3s, height 0.3s;
+}
+
+.projects img:hover{
+    width:310px;
+    height: 310px;
+}
+
+/******************************************************/
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    height:90%;
+
+  }
+
+
+    .modal-content .img img {
+        width: 75%; /* makes the image fill the width of the container */
+        max-height: 75vh;   
+        height: auto;  
+
+    }
+    .modal-content .img {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  @media (max-width: 400px) {
+    .modal-content{
+        width:90%;
+    }
+    .modal{
+        padding:70px 0px;
+    }
+}

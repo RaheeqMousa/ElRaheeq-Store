@@ -77,6 +77,9 @@ footer i{
     height:20px;
 }
 
+/* footer .d-flex:nth-child(2){
+    padding: 0;
+} */
 
 @media (max-width: 410px){
     footer .container{

@@ -1,5 +1,5 @@
 
-/* this adds contact us data to the home page */
+/* this adds contact us data to the about us page */
 let contact=[
     {
         icon:'<i class="fa-solid fa-shop"></i>',
@@ -28,9 +28,10 @@ for(var i=0;i<contact.length;i++){
                    </div>`
 };
 
-document.querySelector(".contact_us .row").innerHTML = contact_data;
 
-/* this adds features data to the home page */
+document.querySelector('.contact_us .row').innerHTML = contact_data;
+
+/* this adds features data to the about us page */
 let features= [
     {
         icon:'<i class="fa-solid fa-truck-fast"></i>',
@@ -43,14 +44,15 @@ let features= [
         cond:"Secured by Stripe"
     },
     {
-        icon:'<img src="../Images/Home page/features/knitting-needles.png"/>',
+        
+        icon:'<img src="../Images/about us/features/knitting-needles.png" alt="knitted needles"/>',
         desc:"High quality yarns",
         cond:"treated wool"
     },
 ];
 let data=``;
 for(let i=0;i<features.length;i++){
-    if(features[i].icon.endsWith("/>") && features[i].icon.startsWith('<img src=')){
+    if(features[i].icon.endsWith("/>") && features[i].icon.startsWith('<img ')){
         data += `<div class='feature'>
          <div class="feature_imgs">${features[i].icon} </div>
         <span>${features[i].desc}</span>

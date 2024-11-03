@@ -1,5 +1,11 @@
 /*.....................This will show the video modal for each category........................*/
 
+/*
+    note: I wrote the location for the img as Images/../.. instead of ../Images/../..
+    because that image tag will end be written inside the html file and the src will be Images/../..
+*/
+
+
 var modal = document.getElementById("myModal");
 
 // Get the <span> element that closes the modal
@@ -31,17 +37,17 @@ const getDollsPhotos = function() {
     let data = ``;
     const imgs = [
         {
-            src: "../Images/TeachMe/Dolls/Bunny.jfif",
+            src: "Images/TeachMe/Dolls/Bunny.jfif",
             alt: "Bunny Crochet Image",
             url: "https://www.youtube.com/embed/TlBMcexUwjE" 
         },
         {
-            src: "../Images/TeachMe/Dolls/Amigurumi Doll Crochet.jfif",
+            src: "Images/TeachMe/Dolls/Amigurumi Doll Crochet.jfif",
             alt: "Amigurumi crochet doll Image",
             url: "https://www.youtube.com/embed/wDIFVM-Lxp4?si=NmtQhFalMCACKZnF" 
         },
         {
-            src: "../Images/TeachMe/Dolls/Amigurumi Dress Doll.jfif",
+            src: "Images/TeachMe/Dolls/Amigurumi Dress Doll.jfif",
             alt: "Amigurumi Crochet Doll Dress Image",
             url: "https://www.youtube.com/embed/45ViY0D0__Q?si=-mNvKFotDXzrBh4a" 
         },
@@ -61,7 +67,7 @@ const getBandanasPhotos = function() {
     let data = ``;
     const imgs = [
         {
-            src: "../Images/TeachMe/bandanas/Tulip headband.jfif",
+            src: "Images/TeachMe/bandanas/Tulip headband.jfif",
             alt: "Tulip headband crocheted",
             url: "https://www.youtube.com/embed/Zmwk2F_aVV8?si=HjtdhlSLi9fuC6i5" 
         },
