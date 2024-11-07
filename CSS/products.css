@@ -62,5 +62,15 @@
     height: auto;
     border-radius: 10px; /* Optional: for rounded corners */
   }
+
+/*..............................................................................................*/
+
+.categories img{
+  width:450px;
+  height:300px;
+}
+.categories a{
+  font-size: 20px;
+}
   
 

@@ -4,6 +4,11 @@
     background-image: url('../images/Home/home\ background.webp');
     background-size: cover;
 }
+
+header a:hover{
+    font-size: larger;
+    transition:font-size,.75s;
+}
 /****************************************************************/
 .projects img{
     width:300px;
@@ -17,19 +22,23 @@
     height: 310px;
 }
 
+
 /******************************************************/
 /* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+.myFeatureModal {
+    background-color:rgb(0,0,0,0.3);
+        height:100%;
+        width:100%;
+        position: fixed;
+        top:0;
+        left: 0;
+        display: flex; /*the content of this modal will be in the center of the div*/
+        align-items: center;
+        justify-content: center;
+        z-index: 1; /* Sit on top */
+        display: none; /* Hidden by default */
+        z-index: 1; /* Sit on top */
+        overflow: auto; /* Enable scroll if needed */
   }
   
   /* Modal Content/Box */
@@ -44,14 +53,19 @@
   }
 
 
-    .modal-content .img img {
+.modal-content .img img {
         width: 75%; /* makes the image fill the width of the container */
         max-height: 75vh;   
         height: auto;  
 
     }
-    .modal-content .img {
-        display:flex;
+.modal-content .img {
+        padding: 20px 40px;
+        margin:5px;
+        border-radius:20px;
+        box-shadow:0 4px 4px rgba(0,0,0,.1);
+        position: relative;
+        display: flex;
         justify-content: center;
         align-items: center;
     }
@@ -62,7 +76,29 @@
     float: right;
     font-size: 28px;
     font-weight: bold;
+    top:10;
+    left: 20;
   }
+
+  .left-button{
+    left:10px;
+    top:50%;
+}
+
+.right-button{
+    right:10px;
+    top:50%;
+}
+
+  .right-button, .left-button{
+        position:absolute;
+        color:rgb(255, 255, 255);
+        font-size:20px;
+        background-color: rgba(0,0,0,.2);
+        border-radius: 5px;
+        padding:5px;
+        cursor: pointer;
+}
   
   .close:hover,
   .close:focus {

@@ -45,7 +45,7 @@ let features= [
     },
     {
         
-        icon:'<img src="../Images/about us/features/knitting-needles.png" alt="knitted needles"/>',
+        icon:'<img src="Images/about us/features/knitting-needles.png" alt="knitted needles"/>',
         desc:"High quality yarns",
         cond:"treated wool"
     },
