@@ -1,0 +1,13 @@
+@import "../CSS/main.css";
+
+.products img{
+    width:300px;
+    height:300px;
+}
+
+@media (max-width: 450px){
+    .products .container{
+        width: 100%;
+    }
+
+}

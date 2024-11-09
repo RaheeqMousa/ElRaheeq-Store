@@ -22,21 +22,25 @@ const swiper = new Swiper('.swiper-container', {
 /* ...........................Categories code............ */
 const array=[
   {
-    name: "yarns",
-    img: "Images/products/yarns/yarns.jfif",
+    name: "Dolls",
+    img: "Images/products/dolls/dolls.jfif",
+  },
+  {
+    name: "Sweaters",
+    img: "Images/products/sweater/sweater.jpg",
   },
   {
     name: "Crochet Hooks",
     img: "Images/products/hooks/hooks.jfif",
   },
   {
+    name: "yarns",
+    img: "Images/products/yarns/yarns.jfif",
+  },
+  {
     name: "Scarves",
     img: "Images/products/scarves/scarf.jpg",
   },
-  {
-    name: "Sweaters",
-    img: "Images/products/sweater/sweater.jpg",
-  }
 
 ];
 
@@ -47,7 +51,7 @@ function displayCategories(){
         <div class="col-xxl-6 col-12">
           <div class="category d-flex justify-content-center align-items-center flex-column">
             <img src="${category.img}" alt="${category.name}" class="category-img img-fluid">
-              <a href="categoryDetails.html?category=${category}">${category.name}</a>
+              <a href="productDetails.html?category=${category.name}">${category.name}</a>
           </div>
       </div>`;
   }).join('');
