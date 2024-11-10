@@ -1,35 +1,8 @@
 @import "../CSS/main.css";
 
-.product-slider{
-    padding:20px 0px 40px 0px;
+.carousel-item img{
+  height:650px;
 }
-
-.swiper-button-next,
-.swiper-button-prev {
-  color: white; /* Change the color to match your design */
-  background-color: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background */
-  border-radius: 50%; /* Optional: rounded buttons */
-  width: 40px; /* Adjust button size */
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.swiper-button-next:after,
-.swiper-button-prev:after {
-  font-size: 20px; /* Font size of the arrow */
-  color: white; /* Color of the arrow */
-}
-
-.swiper-button-next {
-  right: 10px; /* Positioning */
-}
-
-.swiper-button-prev {
-  left: 10px; /* Positioning */
-}
-
 
 .info_over_img{
     position: absolute;
@@ -44,33 +17,75 @@
   font-size: 24px;
 }
 
-.product-slider {
-    width: 100%;
-    margin: auto;
-  }
-  
-  .swiper-slide {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .swiper-slide img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px; /* Optional: for rounded corners */
-  }
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: black; /* Makes the icon black */
+}
 
 /*..............................................................................................*/
 
 .categories img{
   width:450px;
-  height:300px;
+  height:500px;
 }
 .categories a{
   font-size: 20px;
 }
+
+
+@media (max-width: 450px){
+  .categories img{
+      width: 100%;
+      height: auto;
+  }
+
+}
   
+/*...................................................*/
+
+  .AllProducts img{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width:350px;
+    height:400px;
+    border-radius: 10px;
+    transition: 0.7s;
+    cursor: pointer;
+  }
+
+  .AllProducts img:hover{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1); /*horizontal offset, vertical offest, blur radius, color of the shadow*/
+    width:355px;
+    height:405px;
+  }
+  
+  @media (max-width: 450px){
+    .AllProducts img{
+        width: 100%;
+        height: auto;
+    }
+
+    .AllProducts .container{
+      width: 100%;
+  }
+  
+  }
+
+/*..............CSS for the pagination..............*/
+
+.page-link{
+  color:rgb(255, 255, 255);
+  border-radius: 5px;
+  font-size: 20px;
+  padding:6px;
+  background-color: grey;
+  border: solid 2px;
+}
+
+.page-link:hover{
+  background-color: darksalmon;
+}
+
+.active-page{
+  background-color: darksalmon;
+}
 
