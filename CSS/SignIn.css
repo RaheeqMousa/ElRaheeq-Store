@@ -39,7 +39,17 @@ form input{
     font-size: 20px;
     border: rgb(228,226,226) 1px solid;
     border-radius: 10px;
-    padding:0px 0px 0px 10px;
+    margin-top: 10;
+}
+
+form #submit_login{
+    width:200px;
+    height:40px;
+    background-color: rgb(228, 226, 226);
+    font-size: 20px;
+    border: rgb(228,226,226) 1px solid;
+    border-radius: 10px;
+    margin-top: 10;
 }
 
 
@@ -57,8 +67,11 @@ form a:hover{
 }
 
 
-@media (max-width: 460px) {
+@media screen and (max-width: 460px) {
     form input{
+        width:200px;
+    }
+    form{
         width:100%;
     }
 }

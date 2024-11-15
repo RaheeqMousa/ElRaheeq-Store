@@ -22,26 +22,102 @@ document.querySelector(".notification button").onclick = removeNotification;
  /*.............................AN ARRAY CONATINS ALL PRODUCTS...................*/ 
 
  const all=[
-  'Images/products/scarves/Crochet Triangle Scarf Crochet Scarf Fall Wrap Crocheted - Etsy.jfif',
-      'Images/products/scarves/Keyhole Scarf CROCHET PATTERN Ruffle Scarf Gift for Her Crochet Scarf for Winter Scarf for Fall Neck Warmer Beautiful Pattern Crochet - Etsy Denmark.jfif',
-      'Images/products/scarves/La Vie en Rose Scarf Pattern for Ladies _ Free Crochet Tutorial _ Kirsten Holloway Designs.jfif',
-      'Images/products/scarves/Mile of Smile PDF Crochet Scarf Pattern.jfif',
-      'Images/products/scarves/white and black triangle scarf.jfif',
-      'Images/products/scarves/white and black triangle scarf.jfif',
-      'Images/products/scarves/tall white triangle scarf.jfif',
-     'Images/products/scarves/white and some blocks on the scarf.jfif',
-     'Images/products/scarves/white and black triangle scarf.jfif',
-      'Images/products/scarves/white and black triangle scarf.jfif',
-      'Images/products/scarves/tall white triangle scarf.jfif',
-     'Images/products/scarves/white and some blocks on the scarf.jfif',
-     'Images/products/scarves/white and black triangle scarf.jfif',
-      'Images/products/scarves/white and black triangle scarf.jfif',
-      'Images/products/scarves/tall white triangle scarf.jfif',
-     'Images/products/scarves/white and some blocks on the scarf.jfif',
-     'Images/products/sweater/stripped colorful crochet sweater.jfif',
-     'Images/products/sweater/white and small flower crochet sweater.jfif',
-     'Images/products/sweater/Sunflower Sweater Pattern_ Crochet pattern _ Ribblr.jfif',
-     'Images/products/sweater/sunflower on white crochet jacket.jfif'
+ {
+  img:'Images/products/scarves/Crochet Triangle Scarf Crochet Scarf Fall Wrap Crocheted - Etsy.jfif',
+  name:'Crochet Triangle Scarf Crochet',
+  price:'10.00',
+  description:'this is a triangle crochet scarfs for fall season'
+ },
+ {
+  img:'Images/products/scarves/Keyhole Scarf CROCHET PATTERN Ruffle Scarf Gift for Her Crochet Scarf for Winter Scarf for Fall Neck Warmer Beautiful Pattern Crochet - Etsy Denmark.jfif',
+  name:'Keyhole Scarf',
+  price:'10.00',
+  description:'this is a triangle crochet scarfs for fall season'
+ },
+ {
+  img:'Images/products/scarves/La Vie en Rose Scarf Pattern for Ladies _ Free Crochet Tutorial _ Kirsten Holloway Designs.jfif',
+  name:'La Vie en Rose Scarf',
+  price:'10.00',
+  description:'this is a triangle crochet scarfs for fall season'
+ },
+ {
+  img:'Images/products/scarves/Mile of Smile PDF Crochet Scarf Pattern.jfif',
+  name:' Crochet Scarf',
+  price:'10.00',
+  description:'this is a triangle crochet scarfs for fall season'
+ },
+ {
+  img:'Images/products/scarves/white and black triangle scarf.jfif',
+  name:'chess crochet scarf',
+  price:'10.00',
+  description:'this is a triangle crochet scarfs for fall season'
+ },
+ {
+  img:'Images/products/scarves/white and black triangle scarf.jfif',
+  name:'chess crochet scarf',
+  price:'10.00',
+  description:'this is a triangle crochet scarfs for fall season'
+ },
+
+ {
+  img:'Images/products/scarves/white and some blocks on the scarf.jfif',
+  name:'Crochet scarf',
+  price:'10.00',
+  description:'This is a triangle crochet scarfs for fall season with a stylish, andcolorful edges'
+ },
+ {
+  img:'Images/products/scarves/Crochet Triangle Scarf Crochet Scarf Fall Wrap Crocheted - Etsy.jfif',
+  name:'fall Wrap crocheted scarf',
+  price:'10.00',
+  description:'this is a triangle crochet scarfs for fall season'
+ },
+ {
+  img:'Images/products/scarves/white and black triangle scarf.jfif',
+  name:'chess crochet scarf',
+  price:'10.00',
+  description:'this is a triangle crochet scarfs for fall season'
+ },
+
+ {
+  img:'Images/products/scarves/white and some blocks on the scarf.jfif',
+  name:'Crochet scarf',
+  price:'10.00',
+  description:'This is a triangle crochet scarfs for fall season with a stylish, and colorful edges'
+ },
+ {
+  img:'Images/products/scarves/Crochet Triangle Scarf Crochet Scarf Fall Wrap Crocheted - Etsy.jfif',
+  name:'fall Wrap crocheted scarf',
+  price:'10.00',
+  description:'this is a triangle crochet scarfs for fall season'
+ },
+ 
+
+ {
+  img:'Images/products/sweater/stripped colorful crochet sweater.jfif',
+  name:'Stripped sweater',
+  price:'10.00',
+  description:'Stripped, stylish colorful crochet sweater'
+ },
+
+ {
+  img:'Images/products/sweater/white and small flower crochet sweater.jfif',
+  name:'Flowers sweater',
+  price:'10.00',
+  description:'This is White Sweater with some small flowers on it.'
+ },
+ {
+  img:'Images/products/sweater/Sunflower Sweater Pattern_ Crochet pattern _ Ribblr.jfif',
+  name:'SunFlower pattern sweater',
+  price:'10.00',
+  description:'This is a crocheted sweater with a sunflower pattern on it.'
+ },
+ {
+  img:'Images/products/sweater/sunflower on white crochet jacket.jfif',
+  name:'pinky flowers sweater',
+  price:'10.00',
+  description:'This is a White crocheted sweater with small Pink flowers pattern on it.'
+ },
+
 ];
 
 /* ...........................Categories code............ */
@@ -92,7 +168,7 @@ function displayCategories(){
             data += `
                 <div class="col-12 col-xxl-4 mb-3">
                   <div class="category d-flex justify-content-center align-items-center flex-column">
-                      <img src='${all[i]}' alt='product Image' class="img-fluid"/>
+                      <img src='${all[i].img}' alt='product Image' class="img-fluid images"/>
                   </div>
                 </div>`;
     }
@@ -101,6 +177,7 @@ function displayCategories(){
 
 
     productsPagination(page,Math.ceil((all.length/10)));
+    modal(page);
 
   }
 /*...............................................PAGINATION CODE.................................................. */
@@ -137,5 +214,123 @@ function productsPagination(page, numberOfPages) {
 
 }
 
+/*................................................ Get Product Data InnerHTML for The Modal .......................................*/
+
+const getProductDataInnerHTMLForTheModal =  (page, currentIndex) => {
+  const selectedProduct = all[(page - 1) * 10 + currentIndex];
+
+  const data = `
+          <p>Title: ${selectedProduct.name}</p>
+          <p>price: ${selectedProduct.price}</p>
+  `;
+
+  return data; // Return the HTML data to be displayed in the modal
+}
+
+/*............................................... Get product Description InnerHTML for the Modal .....................................................*/
+
+const getProductDescriptionInnerHTMLForTheModal =  (page, currentIndex) => {
+  const selectedProduct = all[(page - 1) * 10 + currentIndex];
+
+  const data = `
+          <p >${selectedProduct.description}</p>
+  `;
+
+  return data; // Return the HTML data to be displayed in the modal
+}
+
+/*.....................................This function to show the modal for the products.............................................*/
+function modal(page){
+  const modal=document.querySelector(".products-modal");
+  const left=document.querySelector(".left-button");
+  const right=document.querySelector(".right-button");
+  const close=document.querySelector(".close-button");
+  const images=Array.from(document.querySelectorAll(".images"));/* I got all the product images in the website */
+  let currentIndex=0;
+
+  images.forEach(function(img){
+      img.addEventListener("click", function(e){
+          /* when i click on an image of a product the modal will display and contains the image i clicked src */
+          /* also i gave that event listener to all products image  */
+          modal.classList.remove("display-none-modal"); /* to let the modal display in the website */
+          
+          const currentImage=e.target;
+          console.log(currentImage.src, currentImage);
+          currentIndex=images.indexOf(currentImage);//the current index is known by the index of the image we clicked 
+
+          modal.querySelector("img").setAttribute("src",e.target.src);
+          //display the product data in the modal
+          modal.querySelector(".productData").innerHTML=getProductDataInnerHTMLForTheModal(page,currentIndex);         
+          modal.querySelector(".img .desc").innerHTML=getProductDescriptionInnerHTMLForTheModal(page,currentIndex); 
+      });
+  });
+
+  //right button
+  right.addEventListener("click", function(e){
+      currentIndex++;  //inorder to get the next image index
+      if(currentIndex>=images.length){
+          currentIndex=0;
+      }
+
+      const src=images[currentIndex].src; //get the next image src
+      modal.querySelector("img").setAttribute("src",src);
+      
+      modal.querySelector(".productData").innerHTML=  getProductDataInnerHTMLForTheModal(page,currentIndex); //display the product data in the modal
+      modal.querySelector(".img .desc").innerHTML= getProductDescriptionInnerHTMLForTheModal(page,currentIndex); 
+  });
+
+  //left button
+  left.addEventListener("click", function(e){
+
+      currentIndex--;
+      if(currentIndex<0){
+          currentIndex=images.length-1;
+      }
+      const src=images[currentIndex].src;
+      modal.querySelector("img").setAttribute("src",src);
+      //display the product data in the modal
+      modal.querySelector(".productData").innerHTML= getProductDataInnerHTMLForTheModal(page,currentIndex); 
+      modal.querySelector(".img .desc").innerHTML= getProductDescriptionInnerHTMLForTheModal(page,currentIndex); 
+  });
+
+  //right button, left button, close button WITH KEYBOARD
+  document.addEventListener("keydown", function(e){
+      if(e.code=='ArrowRight'){
+          currentIndex++;
+          if(currentIndex>=images.length){
+              currentIndex=0;
+          }
+          src= images[currentIndex].src;
+          
+          modal.querySelector("img").setAttribute("src",src);
+          modal.querySelector(".productData").innerHTML= getProductDataInnerHTMLForTheModal(page,currentIndex); //display the product data in the modal
+          modal.querySelector(".img .desc").innerHTML= getProductDescriptionInnerHTMLForTheModal(page,currentIndex); 
+      }else if (e.code=='ArrowLeft'){
+          currentIndex--;
+          if(currentIndex<0){
+              currentIndex=images.length-1;
+          }
+          src=images[currentIndex].src;
+          
+          modal.querySelector("img").setAttribute("src",src);
+          modal.querySelector(".productData").innerHTML= getProductDataInnerHTMLForTheModal(page,currentIndex); //display the product data in the modal
+          modal.querySelector(".img .desc").innerHTML= getProductDescriptionInnerHTMLForTheModal(page,currentIndex); 
+      }else if(e.code=='Escape'){
+          modal.classList.add('display-none-modal');
+      }
+  });
+
+  //close button with click event
+  close.addEventListener("click",function(e){
+
+      modal.classList.add("display-none-modal");
+
+  });
+
+}
+
+
+
 displayAllProducts();
 displayCategories();
+

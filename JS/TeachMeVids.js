@@ -54,6 +54,13 @@ const getDollsPhotos = function() {
 
     ];
 
+    if(imgs.length==0){
+        data += `<div class="d-flex justify-content-center align-items-center py-5">
+                    <img src="Images/TeachMe/no teaching videos right now.WEBP" alt='No teaching virdeos right now img'  />
+                </div>`;
+        return data;
+    }
+
     for (let i = 0; i < imgs.length; i++) {
         data += `<img src='${imgs[i].src}' alt='${imgs[i].alt}' url='${imgs[i].url}' />`;
     }
@@ -73,6 +80,33 @@ const getBandanasPhotos = function() {
         },
 
     ];
+    
+    if(imgs.length==0){
+        data += `<div class="d-flex justify-content-center align-items-center py-5">
+                    <img src="Images/TeachMe/no teaching videos right now.WEBP" alt='No teaching virdeos right now img'  />
+                </div>`;
+        return data;
+    }
+ 
+    for (let i = 0; i < imgs.length; i++) {
+        data += `<img src='${imgs[i].src}' alt='${imgs[i].alt}' url='${imgs[i].url}' />`;
+    }
+
+    return data;    
+}
+
+const getSweaterPhotos = function() {
+    let data = ``;
+    const imgs = [
+
+    ];
+
+    if(imgs.length == 0) {
+        data += `<div class="d-flex justify-content-center align-items-center py-5">
+                    <img src="Images/TeachMe/no teaching videos right now.WEBP" alt='No teaching virdeos right now img'  />
+                </div>`;
+        return data;
+    }
 
     for (let i = 0; i < imgs.length; i++) {
         data += `<img src='${imgs[i].src}' alt='${imgs[i].alt}' url='${imgs[i].url}' />`;
@@ -80,6 +114,48 @@ const getBandanasPhotos = function() {
 
     return data;    
 }
+
+const getCarpetsPhotos = function() {
+    let data = ``;
+    const imgs = [
+
+    ];
+
+    if(imgs.length == 0) {
+        data += `<div class="d-flex justify-content-center align-items-center py-5">
+                    <img src="Images/TeachMe/no teaching videos right now.WEBP" alt='No teaching virdeos right now img'  />
+                </div>`;
+        return data;
+    }
+
+    for (let i = 0; i < imgs.length; i++) {
+        data += `<img src='${imgs[i].src}' alt='${imgs[i].alt}' url='${imgs[i].url}' />`;
+    }
+
+    return data;    
+}
+
+const getBookCoversPhotos = function() {
+    let data = ``;
+    const imgs = [
+
+    ];
+
+    if(imgs.length == 0) {
+        data += `<div class="d-flex justify-content-center align-items-center py-5">
+                    <img src="Images/TeachMe/no teaching videos right now.WEBP" alt='No teaching virdeos right now img'  />
+                </div>`;
+        return data;
+    }
+
+    for (let i = 0; i < imgs.length; i++) {
+        data += `<img src='${imgs[i].src}' alt='${imgs[i].alt}' url='${imgs[i].url}' />`;
+    }
+
+    return data;    
+}
+
+
 
 
 
@@ -96,19 +172,20 @@ const showVideo = function() {
         document.querySelector(".videos .row").innerHTML = getBandanasPhotos(); 
 
     } else if (categoryClickedOn === "Carpets") {
-
+        document.querySelector(".videos .row").innerHTML = getCarpetsPhotos();
     } else if (categoryClickedOn === "Sweaters") {
-
+        document.querySelector(".videos .row").innerHTML = getSweaterPhotos();
     } else if (categoryClickedOn === "Book covers") {
-
+        document.querySelector(".videos .row").innerHTML = getBookCoversPhotos();
     }
 
     const imageElements = document.querySelectorAll(".videos .row img");
     imageElements.forEach(function(img) {
-        img.addEventListener("click", function() {
-            const url = this.getAttribute("url"); // Use data-url for the video URL
-            displayModal(url); // give the display function the url to display
-        }); 
+        if(img.alt != 'No teaching virdeos right now img')
+            img.addEventListener("click", function() {
+                const url = this.getAttribute("url"); // Use data-url for the video URL
+                displayModal(url); // give the display function the url to display
+            }); 
     });
 }
 

@@ -62,3 +62,44 @@
 
 // sign_up.onclick=fillSignUp();
 
+const getLoginInfo = async function() {
+    try {
+        const response = await axios.get('https://dummyjson.com/users');
+        console.log(response.data.users);
+        return response.data.users;
+    } catch (error) {
+        console.error('Error:', error);
+    }
+};
+
+const getLogedInAccount = async function() {
+    const users = await getLoginInfo();
+    const par=new URLSearchParams(window.location.search);
+    console.log(users[0].id,par.get('id'));
+    for(let i=0;i<users.length;i++){
+        if(users[i].id== par.get('id')){
+            console.log(users[i]);
+            return users[i];
+        }
+        else{
+            console.log("User not found");
+            return null;
+        }
+    }
+
+    return logedInUser;
+}
+
+const displayUserData = async function(){
+    const user = await getLogedInAccount();
+    if(user){
+        const data=`
+        <h1>User Information</h1>
+        <p>Username: ${user.username}</p>
+        <p>Phone: ${user.phone}</p>
+        <img src="${user.image}" alt="User Image">
+        `;
+        document.querySelector("main").innerHTML = data;
+    }
+}
+displayUserData();
