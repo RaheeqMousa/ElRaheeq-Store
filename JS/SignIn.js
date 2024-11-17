@@ -17,13 +17,13 @@ const activeLoginButton = async function(event) {
     const loginInfo = await getLoginInfo();
     console.log(loginInfo);
 
-    let loged_in_user;
+    let logged_in_user;
     let found = false;
     for (let i = 0; i < loginInfo.length; i++) {
         // trim() removes the spaces before the string and after it
         // compare the entered email and password with the stored ones in the loginInfo array
         if (emailField.value.trim() === loginInfo[i].email && passwordField.value.trim() === loginInfo[i].password) {
-            loged_in_user = loginInfo[i];
+            logged_in_user = loginInfo[i];
             found = true;
             break;
         }
@@ -31,9 +31,11 @@ const activeLoginButton = async function(event) {
 
     console.log(found);
     if (found) {
+        localStorage.setItem('loggedInUser',JSON.stringify(logged_in_user)); //JSON.stringify() to convert the object to a string
+        console.log(localStorage.getItem('loggedInUser')+".......");
         alert("Login Successful");
-
-        window.location.href=`profile.html?id=${loged_in_user.id}&username='${loged_in_user.firstName}+" "+${loged_in_user.lastName}'&image=${loged_in_user.image}&phone=${loged_in_user.phone}`;
+        window.location.href=`profile.html?id=${logged_in_user.id}&username='${logged_in_user.firstName}+" "+${logged_in_user.lastName}'`;
+        
     } else {
         alert("Invalid Email or Password");
     }

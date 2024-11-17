@@ -151,7 +151,6 @@ function fillAllFeaturePieces(){
             data += `
                     <img src='${allImages[i].src}' alt='${allImages[i].alt}' url='${allImages[i].src}' a='${allImages[i].alt}' class='all'/>`;
     }
-    console.log(data);
     document.querySelector('#All-tab-pane .d-flex').innerHTML = data;
 
     const imageElements = document.querySelectorAll("#All-tab-pane .d-flex img");
@@ -178,7 +177,6 @@ function buttonsForDisplayingAllFeatures() {
     const images=Array.from(document.querySelectorAll(".all"));  
 
     let currentIndex=0;
-    console.log(images);
     images.forEach(function(img){
         img.addEventListener("click", async function(e){
             /* when i click on an image of a product the modal will display and contains the image i clicked src */

@@ -65,7 +65,6 @@
 const getLoginInfo = async function() {
     try {
         const response = await axios.get('https://dummyjson.com/users');
-        console.log(response.data.users);
         return response.data.users;
     } catch (error) {
         console.error('Error:', error);
@@ -73,12 +72,11 @@ const getLoginInfo = async function() {
 };
 
 const getLogedInAccount = async function() {
+    console.log(localStorage.getItem('loggedInUser')+".......");
     const users = await getLoginInfo();
     const par=new URLSearchParams(window.location.search);
-    console.log(users[0].id,par.get('id'));
     for(let i=0;i<users.length;i++){
         if(users[i].id== par.get('id')){
-            console.log(users[i]);
             return users[i];
         }
         else{
@@ -94,12 +92,31 @@ const displayUserData = async function(){
     const user = await getLogedInAccount();
     if(user){
         const data=`
-        <h1>User Information</h1>
-        <p>Username: ${user.username}</p>
-        <p>Phone: ${user.phone}</p>
-        <img src="${user.image}" alt="User Image">
+            <div class="about-user">
+                <p class="fw-bold fs-3" >Username: ${user.username}</p>
+                <img src="${user.image}" alt="User Image">        
+                <p class="user-bio">Born on ${user.birthDate}, I have ${user.hair.color}, ${user.hair.type} hair</p>
+            </div>
+             <div class="info-section">
+                <p class="fw-bold fs-3">Contact</p>
+                <p>Email: ${user.email}</p>
+                <p>Phone: ${user.phone}</p>
+            </div>
+            <div class="address-section">
+                <p class="fw-bold fs-3">Address</p>
+                <p>Address: ${user.address.address}</p>
+                <p>Country: ${user.address.country}, City: ${user.address.city}</p>
+            </div>        
+            <button class="fs-4 bg-black w-25 text-white fw-bold rounded-pill"onclick="logoutAction()">Log Out</button>     
         `;
-        document.querySelector("main").innerHTML = data;
+        document.querySelector("main .profile").innerHTML = data;
     }
 }
 displayUserData();
+
+const logoutAction=function(){
+    console.log("Logout clicked");
+    localStorage.removeItem('loggedInUser');
+    window.location.href='Sign In.html';
+}
+
