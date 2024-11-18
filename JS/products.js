@@ -153,7 +153,7 @@ let data=array.map(function(category){
         <div class="category d-flex justify-content-center align-items-center flex-column my-3">
             <img src="${category.img}" alt="${category.name}" class="category-img img-fluid">         
             <p >${category.name}</p>
-            <a href="productDetails.html?category=${category.name}" class="text-decoration-underline">Shop now<i class="mx-2 fa-solid fa-arrow-right"></i></a>           
+            <a href="./productDetails.html?category=${category.name}" class="text-decoration-underline">Shop now<i class="mx-2 fa-solid fa-arrow-right"></i></a>           
         </div>
     </div>`;
 }).join('');
