@@ -149,13 +149,11 @@ function displayCategories(){
 
 let data=array.map(function(category){
   return `
-      <div class="col-xxl-6 col-12">
+      <div class="col-xxl-6 col-xl-6 col-12">
         <div class="category d-flex justify-content-center align-items-center flex-column my-3">
-          <img src="${category.img}" alt="${category.name}" class="category-img img-fluid">
-            
-              <p >${category.name}</p>
-              <a href="productDetails.html?category=${category.name}" class="text-decoration-underline">Shop now<i class="mx-2 fa-solid fa-arrow-right"></i></a>
-            
+            <img src="${category.img}" alt="${category.name}" class="category-img img-fluid">         
+            <p >${category.name}</p>
+            <a href="productDetails.html?category=${category.name}" class="text-decoration-underline">Shop now<i class="mx-2 fa-solid fa-arrow-right"></i></a>           
         </div>
     </div>`;
 }).join('');

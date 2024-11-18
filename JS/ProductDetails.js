@@ -115,7 +115,7 @@ const displayProducts=function(){
         displayScarves();
     else if(categoryClickedOn=="yarns")
         displayYarns();
-    else if(categoryClickedOn=="Hooks")
+    else if(categoryClickedOn=="Crochet Hooks")
         displayHooks();
     else if(categoryClickedOn=="Dolls")
         displayDolls();

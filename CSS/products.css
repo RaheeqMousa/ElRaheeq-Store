@@ -224,21 +224,21 @@
 
 .categories .category a{
   bottom:10%;
-  left:45%;
+  left:55%;
   color:white;
   background-color: rgba(0, 0, 0, 0.5);
   font-size: 20px;
-  width:35%;
+  width:25%;
   text-align: center;
   position: absolute;
 }
 .categories .category p{
   bottom:10%;
-  left:45%;
+  left:55%;
   color:white;
   background-color: rgba(0, 0, 0, 0.5);
   font-size: 20px;
-  width:35%;
+  width:25%;
   text-align: center;
   position: absolute;
   margin-bottom: 60px;
@@ -248,10 +248,11 @@
   position: relative;
 }
 
-@media (max-width: 370px) {
+
+@media (max-width: 500px) {
 
   .categories .category p{
-    margin-bottom: 75px;
+    margin-bottom: 100px;
   }
   .categories .container{
     width: 95%;
