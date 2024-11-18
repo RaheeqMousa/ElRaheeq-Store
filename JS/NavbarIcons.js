@@ -16,3 +16,12 @@ const profileIconAction = function(e){
 }
 
 document.querySelector('.fa-user').onclick=profileIconAction;
+
+
+const cartAction=function(e){
+    console.log("Cart clicked");
+    window.location.href="Cart.html";
+    e.preventDefault();
+}
+
+document.querySelector('.fa-cart-shopping').onclick=profileIconAction;

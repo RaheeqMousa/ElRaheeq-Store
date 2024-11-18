@@ -222,4 +222,40 @@
 
 /**********************************************************************************************/
 
+.categories .category a{
+  bottom:10%;
+  left:45%;
+  color:white;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 20px;
+  width:35%;
+  text-align: center;
+  position: absolute;
+}
+.categories .category p{
+  bottom:10%;
+  left:45%;
+  color:white;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 20px;
+  width:35%;
+  text-align: center;
+  position: absolute;
+  margin-bottom: 60px;
+}
+
+.categories .category{
+  position: relative;
+}
+
+@media (max-width: 370px) {
+
+  .categories .category p{
+    margin-bottom: 75px;
+  }
+  .categories .container{
+    width: 95%;
+  }
+
+}
 
